@@ -25,6 +25,21 @@
     <version>${aspectj.version}</version>
 </dependency>
 ```
+- В maven-surefire-plugin добавить конфигурацию и зависимость:
+```dtd
+<configuration>
+    <argLine>
+        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+    </argLine>
+</configuration>
+<dependencies>
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectj.version}</version>
+    </dependency>
+</dependencies>
+```
 
 - Создать класс с аннотацией `@Aspect`
 - Добавить в ресурсы файл `META-INF/aop.xml` и прописать в нем классы-аспекты. Например:
