@@ -32,4 +32,8 @@ public class Demo {
     public void methodWithTwoParameters(Integer parameter1, Integer parameter2) {
         System.out.println("In method with two parameters, value1: " + parameter1 + ", value2: " + parameter2);
     }
+
+    public void getUserFullName(UserModel user) {
+        System.out.println("User full name: " + user.getFullName());
+    }
 }

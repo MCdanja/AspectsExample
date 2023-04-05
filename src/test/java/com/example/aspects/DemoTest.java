@@ -8,21 +8,25 @@ public class DemoTest {
     public void test() {
         Demo demo = new Demo();
         demo.method1();
-        System.out.println("");
+        System.out.println();
         demo.methodWithAnnotation();
-        System.out.println("");
+        System.out.println();
         demo.methodWithReturn();
-        System.out.println("");
+        System.out.println();
         try {
             demo.methodWithException();
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println();
         }
         demo.methodToSkip();
-        System.out.println("");
+        System.out.println();
         demo.methodWithOneParameter("Some value");
-        System.out.println("");
+        System.out.println();
         demo.methodWithTwoParameters(1, 2);
-        System.out.println("");
+        System.out.println();
+
+        UserModel user = new UserModel("Bob", "Singer");
+        demo.getUserFullName(user);
+        System.out.println();
     }
 }

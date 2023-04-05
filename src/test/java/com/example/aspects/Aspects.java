@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Aspect
 public class Aspects {
 
-//*
+/*
     @Pointcut("execution(public * com.example.aspects.Demo.*(..))")
     public void callAtDemo() {}
 
@@ -86,6 +86,12 @@ public class Aspects {
     @Before("callAtDemoMethodsWithParameters() && args(value1, value2)")
     public void beforeDemoMethodWithOneParameter(Integer value1, Integer value2) {
         System.out.println("Before method with two parameters: " + value1 + ", " + value2);
+    }
+//*/
+/*
+    @Before("execution(public * com.example.aspects.Demo.getUserFullName(..)) && args(user)")
+    public void beforeGetFullUserName(UserModel user) {
+        user.setFullName(String.format("%s %s", user.getFirstName(), user.getLastName()));
     }
 //*/
 }
